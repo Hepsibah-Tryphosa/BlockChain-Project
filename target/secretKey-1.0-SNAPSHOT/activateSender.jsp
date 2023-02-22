@@ -29,7 +29,7 @@
             }
            </style>
     </head>
-    <body data-spy="scroll" data-target=".navbar" data-offset="20" id="home">
+    <body onload="openNavBar()" data-spy="scroll" data-target=".navbar" data-offset="20" id="home">
 
       <!-- Page Navbar -->
         <nav class="custom-navbar" data-spy="affix" data-offset-top="20">

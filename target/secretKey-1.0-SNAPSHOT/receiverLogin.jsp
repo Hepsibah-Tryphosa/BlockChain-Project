@@ -13,36 +13,7 @@
     </head>
     <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
 
-        <!-- Page Navbar -->
-        <nav class="custom-navbar" data-spy="affix" data-offset-top="20">
-            <div class="container">
-                <a class="logo" href="#"></a>         
-                <ul class="nav">
-                    <li class="item ml-md-3">
-                        <a href="#home" class="btn btn-primary">Home</a>
-                    </li>
-                    <li class="item ml-md-3">
-                        <a  href="#sender" class="btn btn-primary">Sender</a>
-                    </li>
-                    <li class="item ml-md-3">
-                        <a  href="#receiver" class="btn btn-primary">receiver</a>
-                    </li>
-                    <li class="item ml-md-3">
-                        <a  href="#Authorize" class="btn btn-primary">Authorize</a>
-                    </li>
-                    <li class="item ml-md-3">
-                        <a  href="#regestration" class="btn btn-primary">Regestration</a>
-                    </li>
 
-
-                </ul>
-                <a href="javascript:void(0)" id="nav-toggle" class="hamburger hamburger--elastic">
-                    <div class="hamburger-box">
-                        <div class="hamburger-inner"></div>
-                    </div>
-                </a>
-            </div>          
-        </nav><!-- End of Page Navbar -->
 
         <!-- page header -->
         <header id="home" class="header">

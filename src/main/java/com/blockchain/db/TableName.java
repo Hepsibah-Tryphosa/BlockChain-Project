@@ -9,5 +9,8 @@ package com.blockchain.db;
  * @author Sweety
  */
 class TableName {
+
+    static String user_details;
+    static String user_files;
     
 }

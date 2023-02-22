@@ -35,7 +35,7 @@ public class DbConnect {
         this.databaseType = "mysql";
         this.serverIP = "localhost";
         this.serverPort = "3306";
-        this.database = "medfogcloud";
+        this.database = "blockchain";
         this.password = "root";
         this.user = "root";
         try {

@@ -11,93 +11,65 @@
         <!-- Bootstrap + Meyawo main styles -->
         <link rel="stylesheet" href="assets/css/meyawo.css">
     </head>
-    <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+    <body>
 
-        <!-- Page Navbar -->
-        <nav class="custom-navbar" data-spy="affix" data-offset-top="20">
-            <div class="container">
-                <a class="logo" href="#"></a>         
-                <ul class="nav">
-                    <li class="item ml-md-3">
-                        <a href="#home" class="btn btn-primary">Home</a>
-                    </li>
-                    <li class="item ml-md-3">
-                        <a  href="#sender" class="btn btn-primary">Sender</a>
-                    </li>
-                    <li class="item ml-md-3">
-                        <a  href="#receiver" class="btn btn-primary">receiver</a>
-                    </li>
-                    <li class="item ml-md-3">
-                        <a  href="#Authorize" class="btn btn-primary">Authorize</a>
-                    </li>
-                    <li class="item ml-md-3">
-                        <a  href="#regestration" class="btn btn-primary">Regestration</a>
-                    </li>
-
-
-                </ul>
-                <a href="javascript:void(0)" id="nav-toggle" class="hamburger hamburger--elastic">
-                    <div class="hamburger-box">
-                        <div class="hamburger-inner"></div>
-                    </div>
-                </a>
-            </div>          
-        </nav><!-- End of Page Navbar -->
-
+       
         <!-- page header -->
         <header id="home" class="header">
 
-            <div>
-                <h6 class="header-title">
-                    <span class="up">Blockchain Enabled Cyber Security:</span>
-                </h6>
-                    <span class="down"><h2>A Comprehensive Survey</h2></span>
-    
-            </div>
-                <div class="wrapper">
-                    <form action="Login" >
-                        <div class="row justify-content-md-start">
-                            <div class="col-3 align-self-center">
-                                <p>Login ID<p>
-                            </div>
-                            <h6><input type="text" name="oname" placeholder="login id">
-                            </h6>
-                        </div> 
-                        <div class="row justify-content-md-start">
-                            <div class="col-3 align-self-center">
-                                <p>Password</p>
-                            </div>
-                            <h6>   <input type="password" name="password" id="pwd" placeholder="Password"></h6>
+
+            <h6 class="header-title">
+                <span class="up">
+                    Blockchain Enabled Cyber Security:</span>
+                <span class="down"><h2>A Comprehensive Survey</h2></span>
+            </h6>
+        </div>
+        <body>
+            <div class="wrapper">
+
+
+                <form action="Login" class="p-3 mt-3">
+                    <div class="row justify-content-md-start">
+                        <div class="col-3 align-self-center">
+                            <p>Login ID<p>
                         </div>
-                        <input type="login" value="login"class="btn btn-primary"><br>
-                        <span>New User ?  <a href="regestration.jsp">Register Here</a></span>
+                        <h6><input type="text" name="oname" placeholder="login id">
+                        </h6>
+                    </div> 
+                    <div class="row justify-content-md-start">
+                        <div class="col-3 align-self-center">
+                            <p>Password</p>
+                        </div>
+                        <h6>   <input type="password" name="password" id="pwd" placeholder="Password"></h6>
+                    </div>
+                    <input type="login" value="login"class="btn btn-primary"><br>
+                    <span>New User ?  <a href="registration.jsp">Register Here</a></span>
+                </form>
 
-                    </form>
+            </div>
 
-                </div>
-          </header>
-
-            </body>
-
-
-
-
-       <!-- end of page header -->
-
-        <!-- about section -->
-        <section class="section pt-0" id="about">
-            <!-- container -->
+        </body>
 
 
-            <!-- core  -->
-            <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
-            <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
 
-            <!-- bootstrap 3 affix -->
-            <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
 
-            <!-- Meyawo js -->
-            <script src="assets/js/meyawo.js"></script>
+    </header><!-- end of page header -->
 
-    </body>
+    <!-- about section -->
+    <section class="section pt-0" id="about">
+        <!-- container -->
+
+
+        <!-- core  -->
+        <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+        <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+
+        <!-- bootstrap 3 affix -->
+        <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+
+        <!-- Meyawo js -->
+        <script src="assets/js/meyawo.js"></script>
+
+</body>
 </html>
+
