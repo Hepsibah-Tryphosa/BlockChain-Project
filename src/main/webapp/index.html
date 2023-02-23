@@ -11,41 +11,51 @@
         <!-- Bootstrap + Meyawo main styles -->
         <link rel="stylesheet" href="assets/css/meyawo.css">
     </head>
-    <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+    <body onload="openNavBar()" data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
 
-      <!-- Page Navbar -->
+        <!--        <div class="navbar">
+                    <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a> 
+                    <a href="#"><i class="fa fa-fw fa-search"></i> Search</a> 
+                    <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a> 
+                    <a href="#"><i class="fa fa-fw fa-user"></i> Login</a>
+                </div>
+        -->
         <nav class="custom-navbar" data-spy="affix" data-offset-top="20">
             <div class="container">
-                <a class="logo" href="#"></a>         
-                <ul class="nav">
-                    <li class="item ml-md-3">
-                        <a href="#home" class="btn btn-primary">Home</a>
-                    </li>
-                    <li class="item ml-md-3">
-                        <a  href="senderLogin.jsp" class="btn btn-primary">Sender</a>
-                    </li>
-                    <li class="item ml-md-3">
-                        <a  href="receiverLogin.jsp" class="btn btn-primary">receiver</a>
-                    </li>
-                    <li class="item ml-md-3">
-                        <a  href="authorize.jsp" class="btn btn-primary">Authorize</a>
-                    </li>
-                    <li class="item ml-md-3">
-                        <a  href="regestration.jsp" class="btn btn-primary">Regestration</a>
-                    </li>
-                    <li class="item ml-md-3">
-                        <a  href="logout.jsp" class="btn btn-primary">Logout</a>
-                    </li>
+                <a class="logo" href="#"></a>
 
-                </ul>
-                <a href="javascript:void(0)" id="nav-toggle" class="hamburger hamburger--elastic">
+
+                <nav class="nav nav-pills">
+                    <a class="nav-item nav-link active" href="#">Home</a>
+                    <a class="nav-item nav-link " href="#">Link</a>
+                    <a class="nav-item nav-link " href="#">Link</a>
+                    <a class="nav-item nav-link " href="#">Disabled</a>
+                </nav>
+
+
+                <!-- <a href="javascript:void(0)" id="nav-toggle" class="hamburger hamburger--elastic">
                     <div class="hamburger-box">
                         <div class="hamburger-inner"></div>
                     </div>
-                </a>
-            </div>          
-        </nav><!-- End of Page Navbar -->
-
+                </a> -->
+            </div>
+        </nav>
+        <!-- End of Page Navbar -->
+        <script>
+            /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+            function myFunction() {
+                var x = document.getElementById("nav");
+                if (x.style.display === "block") {
+                    x.style.display = "none";
+                } else {
+                    x.style.display = "block";
+                }
+            }
+            function openNavBar() {
+                var x = document.getElementById("nav-toggle");
+                x.click();
+            }
+        </script>
         <!-- page header -->
         <header id="home" class="header">
 
