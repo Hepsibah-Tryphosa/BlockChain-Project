@@ -19,8 +19,8 @@ import java.sql.PreparedStatement;
  *
  * @author Sweety
  */
-@WebServlet(name = "signup", urlPatterns = {"/signup"})
-public class Signup extends HttpServlet {
+@WebServlet(name = "ReceiverSignup", urlPatterns = {"/ReceiverSignup"})
+public class ReceiverSignup extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -51,13 +51,13 @@ public class Signup extends HttpServlet {
 
             int no = ps.executeUpdate();
             if (no > 0) {
-                response.sendRedirect("signup.jsp?msg=success");
+                response.sendRedirect("SenderSignup.jsp?msg=success");
             } else {
-                response.sendRedirect("signup.jsp?msg=faild");
+                response.sendRedirect("SenderSignup.jsp?msg=faild");
             }
         } catch (Exception e) {
             System.out.println("Error at Faculty register " + e.getMessage());
-            response.sendRedirect("signup.jsp?msg=faild");
+            response.sendRedirect("SenderSignup.jsp?msg=faild");
         } finally {
             out.close();
         }

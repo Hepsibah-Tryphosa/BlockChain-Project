@@ -1,3 +1,8 @@
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="com.blockchain.db.DbConnection"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -65,9 +70,9 @@
             }
         </script>
         <!-- page header -->
-      
+
         <header class="header">
-            
+
             <div>
                 <h6 class="header-title">
                     <span class="up">Blockchain Enabled Cyber Security:</span>
@@ -76,31 +81,35 @@
                 <span class="down" ><h4 style="color: black; margin-top: 60px">Activate Sender Request</h4></span>
 
 
-            
-           
-            <span class="down">
-                <table>
+
+
+                <span class="down">
+                    <table>
                         <tr>
-                        <th>S.No.</th>
-                        <th>Sender Name</th>
-                        <th>Key</th>    
-                        <th>Status</th>
+
+                            <th>Sender Name</th>
+                            <th>Login ID</th>
+
+                            <th>Key Gen</th>    
+                            <th>status</th>    
+
                         </tr>
+                      
                     </table>
-            </span>
-                </div>
-                </header><!-- end of page header -->
+                </span>
+            </div>
+        </header><!-- end of page header -->
 
 
-                    <!-- core  -->
-                    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
-                    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+        <!-- core  -->
+        <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+        <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
 
-                    <!-- bootstrap 3 affix -->
-                    <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+        <!-- bootstrap 3 affix -->
+        <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
 
-                    <!-- Meyawo js -->
-                    <script src="assets/js/meyawo.js"></script>
+        <!-- Meyawo js -->
+        <script src="assets/js/meyawo.js"></script>
 
-                    </body>
-                    </html>
+    </body>
+</html>

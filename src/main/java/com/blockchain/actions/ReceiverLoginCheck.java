@@ -13,8 +13,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-@WebServlet(name = "SenderLoginCheck", urlPatterns = {"/SenderLoginCheck"})
-public class SenderLoginCheck extends HttpServlet {
+@WebServlet(name = "ReceiverLoginCheck", urlPatterns = {"/ReceiverLoginCheck"})
+public class ReceiverLoginCheck extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -26,27 +26,29 @@ public class SenderLoginCheck extends HttpServlet {
 
             Connection con = DbConnection.getConnection();
             Statement st = con.createStatement();
-            ResultSet rt = st.executeQuery("select * from Sebder_info where loginid='" + loginid + "'");
+            ResultSet rt = st.executeQuery("select * from receiver_info where loginid='" + loginid + "'");
             if (rt.next()) {
                 String u = rt.getString("username");
                 String p = rt.getString("password");
                 String email = rt.getString("email");
                 int contactno = rt.getInt("contactno");
                 String usertype = rt.getString("usertype");
-                int loginid = rt.getInt("loginid");
+                
+                
+                String loginid = rt.getString("loginid");
                 System.out.println(loginid);
                 String activate = rt.getString("status");
-                String username = rt.getString("username");
+                String receivername = rt.getString("receivername");
                 if (password.equalsIgnoreCase(p)) {
                     if (activate.equalsIgnoreCase("Authorized")) {
                         HttpSession user = request.getSession();
-                        user.setAttribute("username", username);
+                        user.setAttribute("username", receivername);
                         
                         user.setAttribute("loginid", loginid);
                         user.setAttribute("password", password);
                          user.setAttribute("contactno", contactno);
                         user.setAttribute("usertype", usertype);
-                        response.sendRedirect("senderHome.jsp");
+                        response.sendRedirect("receiverHome.jsp");
                     } else {
                         out.println("Your not Yet Activeted");
                     }

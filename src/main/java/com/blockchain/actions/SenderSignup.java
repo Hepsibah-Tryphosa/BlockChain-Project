@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package com.blockchain.actions;
 
 import com.blockchain.db.DbConnection;
@@ -6,58 +10,54 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.PreparedStatement;
 
-@WebServlet(name = "SenderLoginCheck", urlPatterns = {"/SenderLoginCheck"})
-public class SenderLoginCheck extends HttpServlet {
+/**
+ *
+ * @author Sweety
+ */
+@WebServlet(name = "SenderSignup", urlPatterns = {"/SenderSignup"})
+public class SenderSignup extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        try {
-            String loginid = request.getParameter("loginid");
-            String password = request.getParameter("password");
 
-            Connection con = DbConnection.getConnection();
-            Statement st = con.createStatement();
-            ResultSet rt = st.executeQuery("select * from Sebder_info where loginid='" + loginid + "'");
-            if (rt.next()) {
-                String u = rt.getString("username");
-                String p = rt.getString("password");
-                String email = rt.getString("email");
-                int contactno = rt.getInt("contactno");
-                String usertype = rt.getString("usertype");
-                int loginid = rt.getInt("loginid");
-                System.out.println(loginid);
-                String activate = rt.getString("status");
-                String username = rt.getString("username");
-                if (password.equalsIgnoreCase(p)) {
-                    if (activate.equalsIgnoreCase("Authorized")) {
-                        HttpSession user = request.getSession();
-                        user.setAttribute("username", username);
-                        
-                        user.setAttribute("loginid", loginid);
-                        user.setAttribute("password", password);
-                         user.setAttribute("contactno", contactno);
-                        user.setAttribute("usertype", usertype);
-                        response.sendRedirect("senderHome.jsp");
-                    } else {
-                        out.println("Your not Yet Activeted");
-                    }
-                } else {
-                    out.println("incorrect password");
-                }
+        String username = request.getParameter("username");
+        String loginid = request.getParameter("loginid");
+        String email = request.getParameter("email");
+        String contactno = request.getParameter("contactno");
+        String password = request.getParameter("password");
+        String usertype = request.getParameter("usertype");
+
+        java.sql.Date sqlDate = new java.sql.Date(new java.util.Date().getTime());
+        Connection con = null;
+        PreparedStatement ps = null;
+        try {
+            con = DbConnection.getConnection();
+            String query = "insert into userinfo(username,loginid,email,contactno,password,usertype) values(?,?,?,?,?,?,?,?)";
+            ps = con.prepareStatement(query);
+            ps.setString(1, username);
+            ps.setString(2, loginid);
+            ps.setString(3, email);
+            ps.setString(4, contactno);
+            ps.setString(3, password);
+
+            ps.setString(5, usertype);
+
+            int no = ps.executeUpdate();
+            if (no > 0) {
+                response.sendRedirect("SenderSignup.jsp?msg=success");
             } else {
-                out.println("Incorrect username");
+                response.sendRedirect("SenderSignup.jsp?msg=faild");
             }
         } catch (Exception e) {
-            out.println(e);
+            System.out.println("Error at Faculty register " + e.getMessage());
+            response.sendRedirect("SenderSignup.jsp?msg=faild");
         } finally {
             out.close();
         }

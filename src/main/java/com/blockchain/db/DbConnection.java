@@ -19,7 +19,7 @@ public class DbConnection {
    public static Connection getConnection(){
        try {
            DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-           con = DriverManager.getConnection("jdbc:mysql://localhost:3306/blockchain","root","root");
+           con = DriverManager.getConnection("jdbc:mysql://localhost:3306/block_chain","root","root");
            if(con!=null){
            return con;
            }else{

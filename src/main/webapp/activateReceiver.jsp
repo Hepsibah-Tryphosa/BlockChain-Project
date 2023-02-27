@@ -1,3 +1,7 @@
+<%@page import="com.blockchain.db.DbConnection"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -83,9 +87,31 @@
                         <tr>
                         <th>S.No.</th>
                         <th>Receiver Name</th>
-                        <th>Key</th>    
+                        <th>Key Gen</th>    
                         <th>Status</th>
                         </tr>
+                        
+                         <%
+                            Connection con = null;
+                            Statement st = null;
+                            ResultSet rs = null;
+                            try {
+                                con = DbConnection.getConnection();
+                                st = con.createStatement();
+                                rs = st.executeQuery("select receivername,loginid,usertype from receiver_info ");
+                                 while (rs.next()) {%>
+                        <td><%=rs.getString("receivername")%></td>   
+                         <td><%=rs.getString("loginid")%></td>
+                        <td> <a href="Generate.jsp?id=<%=rs.getString("loginid")%>"><font style="color:greenyellow">Status</a></td>
+
+
+                        <tr/>
+                        <%
+                                }
+                            } catch (Exception ex) {
+                                ex.printStackTrace();
+                            }
+                        %>
                     </table>
             </span>
                 </div>
